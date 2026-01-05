@@ -1,0 +1,17 @@
+node_modules/
+*.log
+.DS_Store
+.env
+dist/
+build/
+coverage/
+__pycache__/
+*.pyc
+.venv/
+venv/
+/.next/
+/.turbo/
+/project frontend/node_modules/
+/project frontend/.next/
+/project frontend/.turbo/
+/project frontend/.vercel/

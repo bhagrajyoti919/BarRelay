@@ -1,0 +1,6 @@
+┌──────── My Orders ────────┐
+│ Order ID | Date | Status │
+│ ------------------------ │
+│ #123 | Today | Pending  │ [Cancel]
+│ #124 | Old   | Paid     │ [Refund]
+└──────────────────────────┘
