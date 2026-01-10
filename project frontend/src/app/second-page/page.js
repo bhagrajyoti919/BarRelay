@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { FollowerPointerCard } from "@/components/ui/following-pointer";
 
@@ -14,6 +15,7 @@ export default function SecondPage() {
             title: "Beer",
             width: "md:col-span-1",
             height: "h-60",
+            link: "/beer",
           },
           {
             id: 2,
@@ -79,25 +81,31 @@ export default function SecondPage() {
             height: "h-60",
           },
         ].map((box) => (
-          <FollowerPointerCard
+          <Link
             key={box.id}
-            title={
-              <TitleComponent title={box.title} avatar={box.image} />
-            }
-            className={`${box.width} h-full`}
+            href={box.link || "#"}
+            className={`${box.width} h-full block`}
+            prefetch={false}
           >
-            <CardContainer containerClassName={`w-full h-full py-0`} className="w-full h-full">
-              <CardBody className={`bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full ${box.height} rounded-xl p-0 border overflow-hidden`}>
-                <CardItem translateZ="50" className="w-full h-full">
-                  <img
-                    src={box.image}
-                    alt={`Product ${box.id}`}
-                    className="w-full h-full object-cover group-hover/card:shadow-xl"
-                  />
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-          </FollowerPointerCard>
+            <FollowerPointerCard
+              title={
+                <TitleComponent title={box.title} avatar={box.image} />
+              }
+              className="h-full"
+            >
+              <CardContainer containerClassName={`w-full h-full py-0`} className="w-full h-full">
+                <CardBody className={`bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full ${box.height} rounded-xl p-0 border overflow-hidden`}>
+                  <CardItem translateZ="50" className="w-full h-full">
+                    <img
+                      src={box.image}
+                      alt={`Product ${box.id}`}
+                      className="w-full h-full object-cover group-hover/card:shadow-xl"
+                    />
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
+            </FollowerPointerCard>
+          </Link>
         ))}
       </div>
     </div>
