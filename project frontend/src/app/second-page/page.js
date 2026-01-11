@@ -51,6 +51,7 @@ export default function SecondPage() {
             title: "Vodka",
             width: "md:col-span-2",
             height: "h-60",
+            link: "/vodka",
           },
           {
             id: 7,
